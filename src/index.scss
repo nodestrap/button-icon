@@ -1,0 +1,55 @@
+// A button UI with a common icon set using "image based icon"
+// and fallback using "font based icon" (Google's Material Icons -or- Font Awesome).
+
+
+
+@use "~@nodestrap/sass-class-template/src/index" as *;
+@use "~@nodestrap/sass-selector/src/index"       as selector;
+@use "~@nodestrap/button/src/index"              as base;
+@use "~@nodestrap/icon/src/index"                as icon;
+
+
+
+$alias              : "%button-icon"                        !default;
+$class              : base.$class                           !default;
+$var-root           : base.$var-root                        !default;
+$var-prefix         : "icon"                                !default;
+$var-prefix-base    : base.$var-prefix                      !default;
+$cssvar: make-cssvar($var-prefix, $var-prefix-base);
+
+
+
+@include declare-cssvar($var-root) {
+}
+
+
+
+/* begin: general style */
+@mixin _style($include, $cssvar: $cssvar) {
+    @if ($include) { @include  base.style; }
+    @else          { @extend #{base.$alias} !optional; }
+
+
+
+    > { @include selector.is(icon.$class) {
+        // overwrite icon's variant-size
+        #{icon.$cssvar}size     : calc(var(#{base.$cssvar}font-size) * var(#{base.$cssvar}lineheight)) !important;
+    
+        // overwrite icon's color:
+        #{icon.$cssvar}color    : var(#{base.$cssvar}color-swap, var(#{base.$cssvar}color)) !important;
+
+        // follows parent's transition speed:
+        transition              : var(#{base.$cssvar}transition) !important;
+    }}
+}
+@mixin style($cssvar: $cssvar) {
+    @include _style(true, $cssvar);
+}
+@include alias($alias) {
+    @include _style(false);
+}
+/* end: general style */
+
+
+
+@include class($alias, $class);

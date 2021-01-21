@@ -1,0 +1,56 @@
+{
+  "name": "@nodestrap/button-icon",
+  "version": "2.0.0",
+  "description": "A button UI with a common icon set using \"image based icon\" and fallback using \"font based icon\" (Google's Material Icons -or- Font Awesome).",
+  "dependencies": {
+    "@nodestrap/button": "^2.0.5",
+    "@nodestrap/icon": "^2.0.5",
+    "@nodestrap/sass-class-template": "^2.0.2",
+    "@nodestrap/sass-selector": "^2.0.1",
+    "react": "^17.0.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.3",
+    "@testing-library/user-event": "^12.6.2",
+    "@types/jest": "^26.0.20",
+    "@types/node": "^14.14.22",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "react-dom": "^17.0.1",
+    "react-scripts": "^4.0.1",
+    "tilde-sass": "^1.0.0",
+    "typescript": "^4.1.3"
+  },
+  "scripts": {
+    "test": "react-scripts test",
+    "testsass": "tilde-sass --file src/*.scss --outFile test/",
+    "compile": "tilde-sass --file src/*.scss --outFile dist/ --outputStyle compressed"
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\](?!@nodestrap[/\\\\].+[/\\\\](dist|src)[/\\\\](.+[/\\\\])*).+[.](js|mjs|jsx|ts|tsx|cjs)$",
+      "^.+[.]module[.](css|sass|scss)$"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodestrap/button-icon.git"
+  },
+  "keywords": [
+    "button",
+    "click",
+    "ui",
+    "control",
+    "icon",
+    "image",
+    "font-icon",
+    "svg"
+  ],
+  "author": "nodestrap, heymarco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nodestrap/button-icon/issues"
+  },
+  "homepage": "https://github.com/nodestrap/button-icon#readme"
+}
