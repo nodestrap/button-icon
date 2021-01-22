@@ -35,7 +35,7 @@ $cssvar: make-cssvar($var-prefix, $var-prefix-base);
         // overwrite icon's variant-size
         #{icon.$cssvar}size     : calc(var(#{base.$cssvar}font-size) * var(#{base.$cssvar}lineheight)) !important;
     
-        // overwrite icon's color:
+        // overwrite icon's theme-color:
         #{icon.$cssvar}color    : var(#{base.$cssvar}color-swap, var(#{base.$cssvar}color)) !important;
 
         // follows parent's transition speed:
