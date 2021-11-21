@@ -1,6 +1,6 @@
 {
   "name": "@nodestrap/button-icon",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "A button with a nice icon for initiating an action.",
   "type": "module",
   "main": "dist/ButtonIcon.jsx",
