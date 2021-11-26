@@ -178,15 +178,14 @@ export function ButtonIcon(props) {
     // children:
     children, ...restProps } = props;
     // jsx:
-    return (<Button 
+    return (React.createElement(Button
     // other props:
-    {...restProps} 
-    // classes:
-    mainClass={props.mainClass ?? sheet.main}>
-            {icon && (iconPosition === 'start') && <Icon icon={icon}/>}
-            {children}
-            {icon && (iconPosition === 'end') && <Icon icon={icon}/>}
-        </Button>);
+    , { ...restProps, 
+        // classes:
+        mainClass: props.mainClass ?? sheet.main },
+        icon && (iconPosition === 'start') && React.createElement(Icon, { icon: icon }),
+        children,
+        icon && (iconPosition === 'end') && React.createElement(Icon, { icon: icon })));
 }
 ButtonIcon.prototype = Button.prototype; // mark as Button compatible
 export { ButtonIcon as default };
