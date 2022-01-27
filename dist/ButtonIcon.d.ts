@@ -5,21 +5,21 @@ import { defaultOrientationRuleOptions, ButtonStyle, ButtonVariant, ButtonType, 
 import { IconProps as IconIconProps } from '@nodestrap/icon';
 export { defaultOrientationRuleOptions };
 export declare type SizeName = 'xs' | 'sm' | 'lg' | 'xl' | (string & {});
-export declare const isSize: (sizeName: SizeName, styles: StyleCollection) => import("@cssfn/cssfn").RuleEntry;
+export declare const isSize: (sizeName: SizeName, styles: StyleCollection) => import("@cssfn/cssfn").Rule;
 /**
  * Uses basic sizes.
  * For example: `sm`, `lg`.
  * @param factory Customize the callback to create sizing definitions for each size in `options`.
  * @param options Customize the size options.
- * @returns A `[Factory<StyleCollection>, ReadonlyRefs, ReadonlyDecls]` represents sizing definitions for each size in `options`.
+ * @returns A `[Factory<Rule>, ReadonlyRefs, ReadonlyDecls]` represents sizing definitions for each size in `options`.
  */
-export declare const usesSizeVariant: (factory?: (sizeName: SizeName) => StyleCollection, options?: SizeName[]) => readonly [() => StyleCollection, import("@cssfn/css-var").ReadonlyRefs<import("@nodestrap/basic").SizeVars>, import("@cssfn/css-var").ReadonlyDecls<import("@nodestrap/basic").SizeVars>];
+export declare const usesSizeVariant: (factory?: (sizeName: SizeName) => StyleCollection, options?: SizeName[]) => readonly [() => import("@cssfn/cssfn").Rule, import("@cssfn/css-var").ReadonlyRefs<import("@nodestrap/basic").SizeVars>, import("@cssfn/css-var").ReadonlyDecls<import("@nodestrap/basic").SizeVars>];
 /**
  * Creates sizing definitions for the given `sizeName`.
  * @param sizeName The given size name written in camel case.
- * @returns A `StyleCollection` represents sizing definitions for the given `sizeName`.
+ * @returns A `Rule` represents sizing definitions for the given `sizeName`.
  */
-export declare const sizeOf: (sizeName: SizeName) => StyleCollection;
+export declare const sizeOf: (sizeName: SizeName) => import("@cssfn/cssfn").Rule;
 /**
  * Gets the all available size options.
  * @returns A `SizeName[]` represents the all available size options.
@@ -31,9 +31,9 @@ export interface SizeVariant {
 export declare const useSizeVariant: (props: SizeVariant) => {
     class: string | null;
 };
-export declare const usesButtonIconLayout: (options?: OrientationRuleOptions | undefined) => StyleCollection;
-export declare const usesButtonIconVariants: () => StyleCollection;
-export declare const usesButtonIconStates: () => StyleCollection;
+export declare const usesButtonIconLayout: (options?: OrientationRuleOptions | undefined) => import("@cssfn/cssfn").Rule;
+export declare const usesButtonIconVariants: () => import("@cssfn/cssfn").Rule;
+export declare const usesButtonIconStates: () => import("@cssfn/cssfn").Rule;
 export declare const useButtonIconSheet: import("@cssfn/types").Factory<import("jss").Classes<"main">>;
 export declare const cssProps: import("@cssfn/css-config").Refs<{
     fontSize: import("@cssfn/css-types").Cust.Ref;
